@@ -5,8 +5,7 @@ import styled from 'styled-components';
 const imgSrc = './baba.jpg';
 
 const StyleImg = styled.div`
-    display: grid;
-    grid-column: 4;
+    grid-area: a;
     margin: 150px 0 0 0px;
 `
 const Picture = (props) => {

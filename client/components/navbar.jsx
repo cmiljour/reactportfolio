@@ -6,11 +6,11 @@ import styled from 'styled-components';
 
 const Ulist = styled.ul`
     display: grid;
-    ${'' /* grid-gap: 10px; */}
+    margin-top: 150px;
     ${'' /* grid-template-columns: minmax(50px, 50px); */}
     grid-template-rows: 50px 50px 50px;
     list-style-type: none;
-    grid-column: 1;
+    grid-area: b;
     
 
 

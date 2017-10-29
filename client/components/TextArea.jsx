@@ -6,9 +6,9 @@ import styled from 'styled-components';
 
 const StyledTextArea = styled.div`
     ${'' /* background: lightgreen; */}
-    display: grid;
-    grid-column: 2 / 7;
+    grid-area: c;
     margin: 15px;
+    padding-left: 20px;
     ${'' /* display:flex;
     flex: 1 1 auto;
     flex-wrap: nowrap; */}
