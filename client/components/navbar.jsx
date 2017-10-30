@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 
 
@@ -19,18 +20,12 @@ const Listitem = styled.li`
     ${'' /* background-color: lightblue; */}
 `
 
-const NavBar = (props) => {
-
-    return (
-
+const NavBar = (props) => (
         <Ulist>
-            <Listitem>About Me</Listitem>
-            <Listitem>Project Links</Listitem>
-            <Listitem>Resume</Listitem>
+            <Listitem><Link to='/about'>About Me</Link></Listitem>
+            <Listitem><Link to='/projects'>Project Links</Link></Listitem>
+            <Listitem><Link to='/resume'> Resume</Link></Listitem>
         </Ulist>
-
-    );
-
-}
+)
 
 export default NavBar;

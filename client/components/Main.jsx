@@ -4,6 +4,9 @@ import styled from 'styled-components';
 import NavBar from './navbar.jsx';
 import TextArea from './TextArea.jsx';
 import Picture from './Picture.jsx';
+import { Switch, Route } from 'react-router-dom';
+import About from './About.jsx';
+import Resume from './Resume.jsx';
 
 const MainBody = styled.div`
     display: grid;
@@ -11,7 +14,7 @@ const MainBody = styled.div`
     grid-template-columns: repeat (8, 1fr);
     grid-template-rows: repeat (2, 1fr);
     grid-template-areas:
-        ". b . . a . . ."
+        ". b . a . . . ."
         ". c c c c c c c";
 
 `
@@ -21,7 +24,11 @@ const Main = (props) => {
         <MainBody>
         <Picture />
         <NavBar />
-        <TextArea />
+        <Switch>
+            <Route path='/about' component={About}/>
+            <Route path='/resume' component={Resume}/>
+            {/* <Route path='/projects' component={Projects}/> */}
+        </Switch>
         </MainBody>
     );
 
