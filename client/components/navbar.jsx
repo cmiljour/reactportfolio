@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 const Ulist = styled.ul`
     display: grid;
     margin-top: 150px;
+    grid-template-colums: 50px 50px 50px 50px;
     grid-template-rows: 30px 30px 30px 50px;
     list-style-type: none;
     grid-area: b;

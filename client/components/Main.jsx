@@ -12,25 +12,36 @@ const MainBody = styled.div`
     margin: 0;
     padding: 0;
     display: grid;
-    ${'' /* margin-left: -40px; */}
     grid-template-columns: repeat (4, 1fr);
-    grid-template-rows: repeat (2, 1fr);
+    /* grid-template-rows: repeat (2, 1fr); */
     grid-template-areas:
-        ". b a . "
-        ". . c . ";
+        ". b a . ";
+       
+`
+
+const TextBody = styled.div`
+display: grid;
+grid-template-columns: 1fr minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr);
+grid-template-rows: 1fr;
+grid-template-areas:
+    ". c c . ";
 
 `
 const Main = (props) => {
 
     return (
+        <div>
         <MainBody>
-        <Picture />
-        <NavBar />
-        <Switch>
-            <Route path='/about' component={About}/>
-            <Route path='/resume' component={Resume}/>
-        </Switch>
+            <Picture />
+            <NavBar />
         </MainBody>
+        <TextBody>
+            <Switch>
+                <Route path='/about' component={About}/>
+                <Route path='/resume' component={Resume}/>
+            </Switch>
+        </TextBody>
+        </div>
     );
 
 }

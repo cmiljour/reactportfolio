@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import PDF from 'react-pdf-js';
 import styled from 'styled-components';
 import pdfFile from './CMiljourResume.pdf';
-
+import htmlContent from './ReactPortfolioCMiljourResume.html';
 
 
 const StyledTextArea = styled.div`
@@ -11,6 +11,19 @@ const StyledTextArea = styled.div`
     grid-area: c;
     justify-self: center;
 `
+const Resume = React.createClass({
+  render() {
+      return (
+          <StyledTextArea>
+          <div dangerouslySetInnerHTML={ {__html: htmlContent} } />
+          </StyledTextArea>
+      );
+  }
+});
+export default Resume;
+
+
+
 
 // const Resume = () => {
 //     return (
@@ -22,58 +35,58 @@ const StyledTextArea = styled.div`
 
 // export default Resume;
 
-class Resume extends React.Component {
-    state = {};
+// class Resume extends React.Component {
+//     state = {};
     
-    onDocumentComplete = (pages) => {
-      this.setState({ page: 1, pages });
-    }
+//     onDocumentComplete = (pages) => {
+//       this.setState({ page: 1, pages });
+//     }
    
-    onPageComplete = (page) => {
-      this.setState({ page });
-    }
+//     onPageComplete = (page) => {
+//       this.setState({ page });
+//     }
    
-    handlePrevious = () => {
-      this.setState({ page: this.state.page - 1 });
-    }
+//     handlePrevious = () => {
+//       this.setState({ page: this.state.page - 1 });
+//     }
    
-    handleNext = () => {
-      this.setState({ page: this.state.page + 1 });
-    }
+//     handleNext = () => {
+//       this.setState({ page: this.state.page + 1 });
+//     }
    
-    renderPagination = (page, pages) => {
-      let previousButton = <button type="button" className="previous" onClick={this.handlePrevious}>Previous</button>;
-      if (page === 1) {
-        previousButton = <button type="button" className="previous disabled">Previous</button>;
-      }
-      let nextButton =<button type="button" className="next" onClick={this.handleNext}>Next</button> ;
-      if (page === pages) {
-        nextButton = <button type="button" className="next disabled">Next</button> ;
-      }
-      return (
-        <nav>
-          <ul className="pager">
-            {previousButton}
-            {nextButton}
-          </ul>
-        </nav>
-        );
-    }
+//     renderPagination = (page, pages) => {
+//       let previousButton = <button type="button" className="previous" onClick={this.handlePrevious}>Previous</button>;
+//       if (page === 1) {
+//         previousButton = <button type="button" className="previous disabled">Previous</button>;
+//       }
+//       let nextButton =<button type="button" className="next" onClick={this.handleNext}>Next</button> ;
+//       if (page === pages) {
+//         nextButton = <button type="button" className="next disabled">Next</button> ;
+//       }
+//       return (
+//         <nav>
+//           <ul className="pager">
+//             {previousButton}
+//             {nextButton}
+//           </ul>
+//         </nav>
+//         );
+//     }
    
-    render() {
-      let pagination = null;
-      if (this.state.pages) {
-        pagination = this.renderPagination(this.state.page, this.state.pages);
-      }
-      return (
-        <StyledTextArea>
-          <PDF file={pdfFile} onDocumentComplete={this.onDocumentComplete} onPageComplete={this.onPageComplete} page={this.state.page} />
-          {pagination}
-        </StyledTextArea>
-      )
-    }
-  }
+//     render() {
+//       let pagination = null;
+//       if (this.state.pages) {
+//         pagination = this.renderPagination(this.state.page, this.state.pages);
+//       }
+//       return (
+//         <StyledTextArea>
+//           <PDF file={pdfFile} onDocumentComplete={this.onDocumentComplete} onPageComplete={this.onPageComplete} page={this.state.page} />
+//           {pagination}
+//         </StyledTextArea>
+//       )
+//     }
+//   }
    
-  module.exports = Resume;
+//   module.exports = Resume;
 
 
