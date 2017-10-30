@@ -9,13 +9,15 @@ import About from './About.jsx';
 import Resume from './Resume.jsx';
 
 const MainBody = styled.div`
+    margin: 0;
+    padding: 0;
     display: grid;
     ${'' /* margin-left: -40px; */}
-    grid-template-columns: repeat (8, 1fr);
+    grid-template-columns: repeat (4, 1fr);
     grid-template-rows: repeat (2, 1fr);
     grid-template-areas:
-        ". b . a . . . ."
-        ". c c c c c c c";
+        ". b a . "
+        ". . c . ";
 
 `
 const Main = (props) => {
@@ -27,7 +29,6 @@ const Main = (props) => {
         <Switch>
             <Route path='/about' component={About}/>
             <Route path='/resume' component={Resume}/>
-            {/* <Route path='/projects' component={Projects}/> */}
         </Switch>
         </MainBody>
     );

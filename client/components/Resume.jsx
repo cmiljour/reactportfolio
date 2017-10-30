@@ -1,35 +1,79 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PDF from 'react-pdf-js';
 import styled from 'styled-components';
-import Iframe from 'react-iframe';
-import logger from 'logging-library';
-import FileViewer from 'react-file-viewer';
-import { CustomErrorComponent } from 'custom-error';
+import pdfFile from './CMiljourResume.pdf';
 
-const file = './CMiljourResume.pdf'
-const type = 'pdf'
+
 
 const StyledTextArea = styled.div`
     ${'' /* background: lightgreen; */}
     grid-area: c;
-    ${'' /* ${'' /* margin: 15px; */}
-    ${'' /* padding-left: 20px; */} */}
+    justify-self: center;
 `
 
-const Resume = (props) => {
-    return (
+// const Resume = () => {
+//     return (
+//         <StyledTextArea>
+//         <iframe src="https://docs.google.com/document/d/e/2PACX-1vScMiMOLBGlxTNpC7hjMPzrUuLWI-Wjg7lcLnvKF6wpWh8DkyOwovt1_9FZMuZEf-Na-h5v8J9nKlLX/pub?embedded=true"></iframe>
+//         </StyledTextArea>
+//     );  
+// }
+
+// export default Resume;
+
+class Resume extends React.Component {
+    state = {};
+    
+    onDocumentComplete = (pages) => {
+      this.setState({ page: 1, pages });
+    }
+   
+    onPageComplete = (page) => {
+      this.setState({ page });
+    }
+   
+    handlePrevious = () => {
+      this.setState({ page: this.state.page - 1 });
+    }
+   
+    handleNext = () => {
+      this.setState({ page: this.state.page + 1 });
+    }
+   
+    renderPagination = (page, pages) => {
+      let previousButton = <button type="button" className="previous" onClick={this.handlePrevious}>Previous</button>;
+      if (page === 1) {
+        previousButton = <button type="button" className="previous disabled">Previous</button>;
+      }
+      let nextButton =<button type="button" className="next" onClick={this.handleNext}>Next</button> ;
+      if (page === pages) {
+        nextButton = <button type="button" className="next disabled">Next</button> ;
+      }
+      return (
+        <nav>
+          <ul className="pager">
+            {previousButton}
+            {nextButton}
+          </ul>
+        </nav>
+        );
+    }
+   
+    render() {
+      let pagination = null;
+      if (this.state.pages) {
+        pagination = this.renderPagination(this.state.page, this.state.pages);
+      }
+      return (
         <StyledTextArea>
-                  <FileViewer
-        fileType={type}
-        filePath={file}
-        errorComponent={CustomErrorComponent}
-        onError={this.onError} />
+          <PDF file={pdfFile} onDocumentComplete={this.onDocumentComplete} onPageComplete={this.onPageComplete} page={this.state.page} />
+          {pagination}
         </StyledTextArea>
-    );  
-}
+      )
+    }
+  }
+   
+  module.exports = Resume;
 
-export default Resume;
 
-
-
-<iframe src="https://docs.google.com/document/d/e/2PACX-1vScMiMOLBGlxTNpC7hjMPzrUuLWI-Wjg7lcLnvKF6wpWh8DkyOwovt1_9FZMuZEf-Na-h5v8J9nKlLX/pub?embedded=true"></iframe>

@@ -6,8 +6,10 @@ import styled from 'styled-components';
 const StyledTextArea = styled.div`
     ${'' /* background: lightgreen; */}
     grid-area: c;
-    margin: 15px;
-    padding-left: 20px;
+    justify-self: center;
+    padding-top: 100px;
+    /* margin: 15px;
+    padding-left: 20px; */
     ${'' /* display:flex;
     flex: 1 1 auto;
     flex-wrap: nowrap; */}
@@ -15,7 +17,11 @@ const StyledTextArea = styled.div`
 const About = (props) => {
         return (
             <StyledTextArea>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, nisi! Reprehenderit dolorum minus accusantium odio delectus, optio ut, possimus a, earum in ullam libero expedita dolorem sapiente exercitationem eum sunt!  
+            <p>I currently live in Chicago, Illinois in the Avondale neighborhood. Chicago has been my home on and off for the last 15 years. Previous residences include Asheville NC, New York NY, Paris France, India, and Madison WI. I am open to work location and remote working.</p>
+            
+            <p>You will find links below to my Github pages which exemplify my programming prowess. This site was also created by me using Bootstrap/Html/CSS. </p>
+            
+            What can I do for you? I can build your computer network, servers, and desktop computers that live within. I can also create browser based programs to manipulate your data. I have over 18 years of professional IT experience to trust with your company technology.            
             </StyledTextArea>
             
         );  
