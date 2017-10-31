@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PDF from 'react-pdf-js';
 import styled from 'styled-components';
-import pdfFile from './CMiljourResume.pdf';
 import htmlContent from './ReactPortfolioCMiljourResume.html';
 
 
@@ -10,16 +8,15 @@ const StyledTextArea = styled.div`
     ${'' /* background: lightgreen; */}
     grid-area: c;
     justify-self: center;
+    padding-top: 20px;
 `
-const Resume = React.createClass({
-  render() {
+const Resume = () => {
       return (
           <StyledTextArea>
           <div dangerouslySetInnerHTML={ {__html: htmlContent} } />
           </StyledTextArea>
       );
-  }
-});
+};
 export default Resume;
 
 

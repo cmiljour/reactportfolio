@@ -7,7 +7,7 @@ const StyledTextArea = styled.div`
     ${'' /* background: lightgreen; */}
     grid-area: c;
     justify-self: center;
-    padding-top: 50px;
+    padding-top: 20px;
     /* margin: 15px;
     padding-left: 20px; */
     ${'' /* display:flex;

@@ -7,7 +7,7 @@ const imgSrc = './baba.jpg';
 const StyleImg = styled.div`
     grid-area: a;
     margin: 150px 0 0 0;
-    justify-self: center;
+    justify-self: left;
 `
 const Picture = (props) => {
     

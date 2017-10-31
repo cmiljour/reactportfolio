@@ -13,6 +13,7 @@ const Ulist = styled.ul`
     list-style-type: none;
     grid-area: b;
     justify-self: center;
+    margin-left: -20px;
 `
 const Listitem = styled.li`
     ${'' /* background-color: lightblue; */}
@@ -39,9 +40,9 @@ const ExtLink = styled.a`
 
 const NavBar = (props) => (
         <Ulist>
-            <NavItem to='/about'>About Me</NavItem>
+            <NavItem to='/about'>About</NavItem>
             <NavItem to='/resume'> Resume</NavItem>
-            <ExtLink href='https://github.com/cmiljour'> My GitHub </ExtLink>
+            <ExtLink href='https://github.com/cmiljour'>GitHub </ExtLink>
             <ExtLink href='https://www.linkedin.com/in/cory-miljour'> LinkedIn</ExtLink> 
         </Ulist>
 )
