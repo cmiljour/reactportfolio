@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-
-
 const Ulist = styled.ul`
     display: grid;
     margin-top: 150px;
@@ -15,14 +13,7 @@ const Ulist = styled.ul`
     justify-self: center;
     margin-left: -20px;
 `
-const Listitem = styled.li`
-    ${'' /* background-color: lightblue; */}
-`
-
-// const activeclassname = 'nav-item-active'
-
 const NavItem = styled(Link).attrs({
-    // activeclassname
 })`
     text-decoration: none;
     font-weight: bolder;
@@ -36,8 +27,6 @@ const ExtLink = styled.a`
     color:black;
     text-shadow: 1px 1px 2px black;
 `
-
-
 const NavBar = (props) => (
         <Ulist>
             <NavItem to='/about'>About</NavItem>

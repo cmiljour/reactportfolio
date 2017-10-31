@@ -5,11 +5,7 @@ import styled from 'styled-components';
 
 
 const StyledTextArea = styled.div`
-    ${'' /* background: lightgreen; */}
     grid-area: c;
-    ${'' /* display:flex;
-    flex: 1 1 auto;
-    flex-wrap: nowrap; */}
 `
 const TextArea = (props) => {
         return (
@@ -19,8 +15,7 @@ const TextArea = (props) => {
             You will find links below to my Github pages which exemplify my programming prowess. This site was also created by me using Bootstrap/Html/CSS.
 
             What can I do for you? I can build your computer network, servers, and desktop computers that live within. I can also create browser based programs to manipulate your data. I have over 18 years of professional IT experience to trust with your company technology.
-            </StyledTextArea>
-            
+            </StyledTextArea>           
         );  
     }
 

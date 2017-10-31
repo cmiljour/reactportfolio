@@ -4,15 +4,9 @@ import styled from 'styled-components';
 
 
 const StyledTextArea = styled.div`
-    ${'' /* background: lightgreen; */}
     grid-area: c;
     justify-self: center;
     padding-top: 20px;
-    /* margin: 15px;
-    padding-left: 20px; */
-    ${'' /* display:flex;
-    flex: 1 1 auto;
-    flex-wrap: nowrap; */}
 `
 const centerTxt = {
     textAlign: 'center'

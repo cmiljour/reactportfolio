@@ -8,15 +8,14 @@ import { Switch, Route } from 'react-router-dom';
 import About from './About.jsx';
 import Resume from './Resume.jsx';
 
+
 const MainBody = styled.div`
     margin: 0;
     padding: 0;
     display: grid;
     grid-template-columns: repeat (4, 1fr);
-    /* grid-template-rows: repeat (2, 1fr); */
     grid-template-areas:
         ". b a . ";
-       
 `
 
 const TextBody = styled.div`
@@ -28,7 +27,6 @@ grid-template-areas:
 
 `
 const Main = (props) => {
-
     return (
         <div>
         <MainBody>

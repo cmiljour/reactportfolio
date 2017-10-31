@@ -10,13 +10,11 @@ const StyleImg = styled.div`
     justify-self: left;
 `
 const Picture = (props) => {
-    
         return (
             <StyleImg>
                 <img src={require(`${imgSrc}`)} />
             </StyleImg>
         );
-    
     }
     
     export default Picture;
