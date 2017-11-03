@@ -16,7 +16,7 @@ const MainBody = styled.div`
     grid-template-columns: repeat (4, 1fr);
     grid-template-areas:
         ". b a . ";
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 1000px) {
       grid-template-areas:
         ". . a . "
         ". . b . "
@@ -24,11 +24,17 @@ const MainBody = styled.div`
 `
 
 const TextBody = styled.div`
-display: grid;
-grid-template-columns: 1fr minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr);
-grid-template-rows: 1fr;
-grid-template-areas:
-    ". c c . ";
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        ". c c .  ";
+
+@media only screen and (max-width: 450px) {
+    grid-template-areas:
+        "c c c c"; 
+} 
+
 `
 const Footer = styled.div`
     height: 100px;

@@ -10,7 +10,7 @@ const StyleImg = styled.div`
     justify-self: left;
     @media only screen and (max-width: 768px) {
         margin-top: 0px;
-        justify-self: center;  
+        /* justify-self: center;   */
     }
 `;
 
