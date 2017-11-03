@@ -30,9 +30,9 @@ const TextBody = styled.div`
     grid-template-areas:
         ". c c .  ";
 
-@media only screen and (max-width: 450px) {
-    grid-template-areas:
-        "c c c c"; 
+    @media only screen and (max-width: 450px) {
+        grid-template-areas:
+            "c c c c"; 
 } 
 
 `
