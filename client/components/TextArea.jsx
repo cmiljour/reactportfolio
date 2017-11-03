@@ -6,6 +6,9 @@ import styled from 'styled-components';
 
 const StyledTextArea = styled.div`
     grid-area: c;
+    @media only screen and (max-width: 768px) {
+        display: flex;
+    }
 `
 const TextArea = (props) => {
         return (

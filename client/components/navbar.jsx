@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const Ulist = styled.ul`
+const Ulist = styled.div`
     display: grid;
     margin-top: 150px;
     grid-template-colums: 50px 50px 50px 50px;
@@ -12,6 +12,18 @@ const Ulist = styled.ul`
     grid-area: b;
     justify-self: center;
     margin-left: -20px;
+    @media only screen and (max-width: 768px) {
+       display: flex;
+       justify-self: center;
+        margin-top: 20px;
+        margin-left: 0px ;      
+    }
+`
+const Litem = styled.div`
+    @media only screen and (max-width: 768px) {
+        margin-right: 10px; 
+        text-decoration: none;
+    }
 `
 const NavItem = styled(Link).attrs({
 })`
@@ -29,10 +41,10 @@ const ExtLink = styled.a`
 `
 const NavBar = (props) => (
         <Ulist>
-            <NavItem to='/about'>About</NavItem>
-            <NavItem to='/resume'> Resume</NavItem>
-            <ExtLink href='https://github.com/cmiljour'>GitHub </ExtLink>
-            <ExtLink href='https://www.linkedin.com/in/cory-miljour'> LinkedIn</ExtLink> 
+            <Litem><NavItem to='/about'>About</NavItem></Litem>
+            <Litem><NavItem to='/resume'> Resume</NavItem></Litem>
+            <Litem><ExtLink href='https://github.com/cmiljour'>GitHub </ExtLink></Litem>
+            <Litem><ExtLink href='https://www.linkedin.com/in/cory-miljour'> LinkedIn</ExtLink></Litem> 
         </Ulist>
 )
 

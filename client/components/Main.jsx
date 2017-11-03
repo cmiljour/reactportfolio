@@ -16,6 +16,11 @@ const MainBody = styled.div`
     grid-template-columns: repeat (4, 1fr);
     grid-template-areas:
         ". b a . ";
+    @media only screen and (max-width: 768px) {
+      grid-template-areas:
+        ". . a . "
+        ". . b . "
+    }
 `
 
 const TextBody = styled.div`
@@ -24,7 +29,9 @@ grid-template-columns: 1fr minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1
 grid-template-rows: 1fr;
 grid-template-areas:
     ". c c . ";
-
+`
+const Footer = styled.div`
+    height: 100px;
 `
 const Main = (props) => {
     return (
@@ -39,6 +46,7 @@ const Main = (props) => {
                 <Route path='/resume' component={Resume}/>
             </Switch>
         </TextBody>
+        <Footer />
         </div>
     );
 
