@@ -8,7 +8,12 @@ const StyleImg = styled.div`
     grid-area: a;
     margin: 150px 0 0 0;
     justify-self: left;
-`
+    @media only screen and (max-width: 768px) {
+        margin-top: 0px;
+        /* justify-self: center;   */
+    }
+`;
+
 const Picture = (props) => {
         return (
             <StyleImg>
@@ -16,5 +21,4 @@ const Picture = (props) => {
             </StyleImg>
         );
     }
-    
     export default Picture;
