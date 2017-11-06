@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import NavBar from './navbar.jsx';
-import TextArea from './TextArea.jsx';
+// import TextArea from './TextArea.jsx';
 import Picture from './Picture.jsx';
 import { Switch, Route } from 'react-router-dom';
 import About from './About.jsx';
